@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Total Shape: The Glow Up — Winifred Achinike</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700;1,900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --r: #CC0000;
+  --rlight: #ff2222;
+  --bg: #0c0c0c;
+  --bg2: #141414;
+  --bg3: #1a1a1a;
+  --line: #242424;
+  --txt: #999999;
+  --white: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Instrument Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: var(--r); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── UTILITIES ── */
+.red { color: var(--r); }
+.white { color: var(--white); }
+.w { max-width: 860px; margin: 0 auto; padding: 0 40px; }
+
+/* ── COVER ── */
+.cover {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-noise {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 70% 20%, rgba(204,0,0,0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(204,0,0,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cover-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px 40px 64px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cover-year {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 32px;
+}
+
+.cover-h {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(72px, 12vw, 140px);
+  line-height: 0.84;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.cover-h span { color: var(--r); display: block; }
+
+.cover-sub {
+  font-size: 15px;
+  color: #444;
+  margin-top: 28px;
+  margin-bottom: 48px;
+  max-width: 440px;
+  line-height: 1.7;
+}
+
+.cover-byline {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cover-dot {
+  width: 8px; height: 8px;
+  background: var(--r);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cover-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.cover-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  margin-top: 8px;
+  padding-left: 22px;
+}
+
+.cover-contacts a, .cover-contacts span {
+  font-size: 13px;
+  color: #555;
+}
+.cover-contacts a:hover { color: var(--r); text-decoration: none; }
+
+.cover-scroll {
+  border-top: 1px solid #1a1a1a;
+  padding: 20px 40px;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2a2a2a;
+}
+
+/* ── INTRO ── */
+.intro {
+  padding: 100px 0 80px;
+  border-top: 1px solid var(--line);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.intro-left h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(44px, 6vw, 68px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.intro-left h2 .muted { color: #2e2e2e; }
+
+.intro-right p {
+  font-size: 15px;
+  color: #777;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+.intro-right p:last-child { margin-bottom: 0; }
+.intro-right strong { color: #ccc; font-weight: 600; }
+
+/* Ticker-like stats row */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  margin-top: 60px;
+}
+
+.stat-cell {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 24px;
+}
+
+.stat-n {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--r);
+  margin-bottom: 6px;
+}
+
+.stat-l {
+  font-size: 12px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* ── EMAIL BLOCKS ── */
+.email-section {
+  border-top: 1px solid var(--line);
+  padding: 80px 0;
+}
+
+.email-section:nth-child(odd) .email-inner { }
+
+.e-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.e-big-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 100px;
+  line-height: 0.85;
+  color: #1c1c1c;
+  flex-shrink: 0;
+  user-select: none;
+  margin-top: -8px;
+}
+
+.e-header-text { flex: 1; }
+
+.e-badge {
+  display: inline-block;
+  background: var(--r);
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+}
+
+.e-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  color: var(--white);
+}
+
+.e-body {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.82;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+/* Changes — flowing inline style, not a rigid table */
+.changes-list {
+  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ch-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.ch-item:first-child { border-top: 1px solid #1c1c1c; }
+
+.ch-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-top: 2px;
+}
+
+.ch-text {
+  font-size: 14px;
+  color: #5a5a5a;
+  line-height: 1.7;
+}
+
+/* ── SHOTS: side by side inside one bg box ── */
+.shots-wrap {
+  position: relative;
+  background: #161616;
+  border: 1px solid #222;
+  padding: 28px 160px 28px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  overflow: visible;
+}
+
+.shot-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.shot-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.shot-label.b { color: #444; }
+.shot-label.a { color: var(--r); }
+
+.shot-img-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.shot-img-wrap img {
+  width: 72%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+}
+
+/* Scribble arrow divider */
+.arrow-divider {
+  flex-shrink: 0;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+.arrow-divider svg {
+  width: 64px;
+  height: 40px;
+  overflow: visible;
+}
+
+/* ── ANNOTATION DIAGRAM ── */
+.annotated-outer {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 8px;
+  width: 100%;
+  overflow: visible;
+}
+
+.annotated {
+  position: relative;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.annotated img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+}
+
+.anno-svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* Thin clean line - vector-effect keeps stroke at 1px regardless of zoom */
+.anno-line {
+  stroke: #CC0000;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  fill: none;
+  opacity: 0.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* No ring */
+.anno-ring { display: none; }
+
+/* Labels — positioned absolute inside .annotated, extends right via overflow:visible */
+.anno-labels {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  overflow: visible;
+}
+
+.anno-label {
+  position: absolute;
+  left: 108%;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 8.5px;
+  color: #666;
+  line-height: 1.5;
+  width: 120px;
+}
+
+.anno-label strong {
+  display: block;
+  font-size: 8px;
+  font-weight: 700;
+  color: #CC0000;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 1px;
+}
+
+.shot-hint {
+  font-size: 10px;
+  color: #252525;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 2;
+}
+
+/* ── SERVICES ── */
+.services-section {
+  border-top: 1px solid var(--line);
+  padding: 80px 0;
+}
+
+.s-intro {
+  margin-bottom: 48px;
+}
+
+.s-tag {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--r);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.s-h {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.s-p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+/* Irregular service grid */
+.svc-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2px;
+  background: var(--line);
+}
+
+.svc-card {
+  background: var(--bg2);
+  padding: 32px 28px;
+}
+
+.svc-card.featured {
+  background: var(--r);
+  grid-row: 1 / 3;
+}
+
+.svc-card.featured .svc-title { color: var(--white); }
+.svc-card.featured .svc-desc  { color: rgba(255,255,255,0.65); }
+.svc-card.featured .svc-num   { color: rgba(255,255,255,0.15); }
+
+.svc-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  color: #1e1e1e;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.svc-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+}
+
+.svc-desc {
+  font-size: 13px;
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+/* ── CONTACT / CTA ── */
+.contact-section {
+  border-top: 1px solid var(--line);
+  padding: 80px 0 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.cta-h {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 80px);
+  line-height: 0.88;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.cta-p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--r);
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.cta-btn:hover { background: #aa0000; text-decoration: none; }
+
+.contact-details { display: flex; flex-direction: column; gap: 24px; }
+
+.cd-item { }
+
+.cd-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  margin-bottom: 5px;
+}
+
+.cd-value {
+  font-size: 15px;
+  color: #777;
+}
+
+.cd-value a { color: #555; }
+.cd-value a:hover { color: var(--r); text-decoration: none; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+}
+
+footer .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+footer p { font-size: 11px; color: #2a2a2a; }
+
+/* ── PRINT ── */
+@media print {
+  .cover { page-break-after: always; min-height: auto; }
+  .email-section { page-break-inside: avoid; }
+  .shot-col { page-break-inside: avoid; }
+  body { background: #0c0c0c; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .w { padding: 0 24px; }
+  .intro-grid, .contact-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-card.featured { grid-row: auto; }
+  .cover-inner, .cover-scroll { padding-left: 24px; padding-right: 24px; }
+  .ch-item { grid-template-columns: 1fr; gap: 6px; }
+  .shots-wrap { flex-direction: column; }
+  .arrow-divider { transform: rotate(90deg); width: 100%; height: 60px; }
+  .annotated { width: 75%; max-width: 260px; }
+  .anno-label { font-size: 8px; max-width: 80px; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════════════════════ COVER ═══════════════════════════ -->
+<section class="cover">
+  <div class="cover-noise"></div>
+
+  <div class="cover-inner">
+    <p class="cover-year">2026 &nbsp;·&nbsp; Email Redesign Proposal</p>
+
+    <h1 class="cover-h">
+      Total Shape:
+      <span>The Glow Up.</span>
+    </h1>
+
+    <p class="cover-sub">
+      Four emails from your welcome sequence. I redesigned all of them.
+      Here is what I did, why I did it, and where I think we could go from here.
+    </p>
+
+    <div class="cover-byline">
+      <div class="cover-dot"></div>
+      <div>
+        <div class="cover-name">Winifred Achinike</div>
+        <div class="cover-contacts">
+          <a href="/cdn-cgi/l/email-protection#c8bfa1a6a1aebaadaca9aba0a1a6a1a3adeeebfefcf3afa5a9a1a4eeebfcfef3aba7a5">winifredachinike&#64;gmail&#46;com</a>
+          <a href="tel:+2349028021766">+234 902 802 1766</a>
+          <a href="https://my-portfolio-winifred-achinike.vercel.app/marketing--portfolio.html" target="_blank">Portfolio ↗</a>
+          <a href="https://calendly.com/winifredachinike" target="_blank">Book a call ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-scroll">Scroll to see the work ↓</div>
+</section>
+
+<!-- ═══════════════════════════ INTRO ═══════════════════════════ -->
+<section class="intro">
+  <div class="w">
+    <div class="intro-grid">
+      <div class="intro-left">
+        <h2>
+          Eight years<br>
+          of great<br>
+          <span class="muted">content.</span>
+        </h2>
+      </div>
+      <div class="intro-right">
+        <p>Total Shape has been putting out science-backed fitness content for eight years. Doctors, trainers, nutritionists — all working together to build something people trust. That is not easy to do.</p>
+        <p>What I noticed is that the emails have a chance to carry more of that energy. The content in them is strong. I just wanted to see what would happen if the design gave it more room to breathe.</p>
+        <p>So I took four emails from your welcome sequence and redesigned them. I want to show you what that looks like and talk about what we could build together.</p>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-cell">
+        <div class="stat-n">04</div>
+        <div class="stat-l">Emails redesigned from your welcome sequence</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">100%</div>
+        <div class="stat-l">Works in Gmail, Outlook, Apple Mail and on mobile</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">∞</div>
+        <div class="stat-l">More I can build once we get started</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">1</div>
+        <div class="stat-l">Person who put all of this together for you</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ EMAIL 01 ═══════════════════════════ -->
+<section class="email-section">
+  <div class="w">
+    <div class="e-header">
+      <div class="e-big-num">01</div>
+      <div class="e-header-text">
+        <div class="e-badge">Welcome Email</div>
+        <div class="e-title">The First Impression</div>
+      </div>
+    </div>
+
+    <p class="e-body">This is the first email a new subscriber gets. The warmth in the copy was already there — I kept all of that. What I wanted was for the design to match how good the writing feels.</p>
+
+    <div class="changes-list">
+      <div class="ch-item">
+        <div class="ch-name">Design</div>
+        <div class="ch-text">A dark background and brand colours that give the email a strong, confident identity from the moment it opens.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Welcome moment</div>
+        <div class="ch-text">The subscriber's name overlaid on a bold athlete photo. It feels like an arrival into something worth being part of.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">eBook cards</div>
+        <div class="ch-text">Each free guide got its own numbered, clickable card with a title and a short description. Much easier to see what you're getting.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Gmail tip</div>
+        <div class="ch-text">Two simple steps instead of a long paragraph. Anyone can follow it without having to read it twice.</div>
+      </div>
+    </div>
+
+    <!-- SHOTS: side by side, scribble arrow, annotated after -->
+    <div class="shots-wrap">
+
+      <!-- BEFORE -->
+      <div class="shot-col">
+        <div class="shot-label b">Before</div>
+        <div class="shot-img-wrap">
+          <img src="email1-before.png" alt="Welcome email original" width="280" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Scribble arrow -->
+      <div class="arrow-divider">
+        <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 22 C10 18, 14 28, 22 20 C30 12, 34 30, 44 18 C50 12, 52 20, 58 16"
+            stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          <path d="M54 10 L60 16 L52 20"
+            stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- AFTER with annotations -->
+      <div class="shot-col">
+        <div class="shot-label a">After</div>
+        <div class="annotated-outer">
+          <div class="annotated">
+            <img src="email1-after.png" alt="Welcome email redesigned" width="240" loading="lazy">
+            <svg class="anno-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <!-- Hero -->
+              <polyline class="anno-line" points="50,22 58,22 58,20 105,20"/>
+              <!-- eBook cards -->
+              <polyline class="anno-line" points="50,48 58,48 58,46 105,46"/>
+              <!-- Gmail tip -->
+              <polyline class="anno-line" points="50,76 58,76 58,74 105,74"/>
+            </svg>
+            <div class="anno-labels">
+              <div class="anno-label" style="top:15%">
+                <strong>Hero</strong>Name on athlete photo. Feels like an arrival.
+              </div>
+              <div class="anno-label" style="top:41%">
+                <strong>eBook cards</strong>Numbered, clickable. Each guide its own card.
+              </div>
+              <div class="anno-label" style="top:68%">
+                <strong>Gmail tip</strong>Two steps. Easy to follow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ EMAIL 02 ═══════════════════════════ -->
+<section class="email-section">
+  <div class="w">
+    <div class="e-header">
+      <div class="e-big-num">02</div>
+      <div class="e-header-text">
+        <div class="e-badge">Article Showcase</div>
+        <div class="e-title">Three Guides,<br>One Email</div>
+      </div>
+    </div>
+
+    <p class="e-body">This email points subscribers to three of your best articles. I wanted each one to feel like a proper feature worth clicking, so I gave each article its own space and its own moment.</p>
+
+    <div class="changes-list">
+      <div class="ch-item">
+        <div class="ch-name">Layout</div>
+        <div class="ch-text">Pure black background. A different feel from email one while still sitting in the same brand world.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Article cards</div>
+        <div class="ch-text">Full-width photo, bold title, red button at the bottom. Each article gets the space it deserves.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Photography</div>
+        <div class="ch-text">Each card has a photo that matches what the article is about. Body types, training, supplement bottles.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Copy</div>
+        <div class="ch-text">The warm opener is kept exactly as it was. I just tidied it up slightly so it flows better.</div>
+      </div>
+    </div>
+
+    <div class="shots-wrap">
+      <div class="shot-col">
+        <div class="shot-label b">Before</div>
+        <div class="shot-img-wrap">
+          <img src="email2-before.png" alt="Article showcase original" width="280" loading="lazy">
+        </div>
+      </div>
+      <div class="arrow-divider">
+        <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 22 C10 18, 14 28, 22 20 C30 12, 34 30, 44 18 C50 12, 52 20, 58 16"
+            stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          <path d="M54 10 L60 16 L52 20"
+            stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="shot-col">
+        <div class="shot-label a">After</div>
+        <div class="annotated-outer">
+          <div class="annotated">
+            <img src="email2-after.png" alt="Article showcase redesigned" width="240" loading="lazy">
+            <svg class="anno-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <!-- Article card -->
+              <polyline class="anno-line" points="50,28 58,28 58,26 105,26"/>
+              <!-- Photography -->
+              <polyline class="anno-line" points="50,58 58,58 58,56 105,56"/>
+            </svg>
+            <div class="anno-labels">
+              <div class="anno-label" style="top:20%"><strong>Article card</strong>Full photo, title, red button.</div>
+              <div class="anno-label" style="top:50%"><strong>Photography</strong>Photo matches what the article is about.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ EMAIL 03 ═══════════════════════════ -->
+<section class="email-section">
+  <div class="w">
+    <div class="e-header">
+      <div class="e-big-num">03</div>
+      <div class="e-header-text">
+        <div class="e-badge">Weekly Newsletter</div>
+        <div class="e-title">Your Weekly<br>Performance Edge</div>
+      </div>
+    </div>
+
+    <p class="e-body">Patrick Willis, the heavy bag, the cable rear delt fly — three strong articles in one email. I wanted the format to carry the same energy as the topics themselves, so it reads more like a newsletter you look forward to than one you skim.</p>
+
+    <div class="changes-list">
+      <div class="ch-item">
+        <div class="ch-name">Masthead</div>
+        <div class="ch-text">"Your Weekly Performance Edge" in big bold type at the top. Tells the reader this is a regular thing worth opening.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Hero banner</div>
+        <div class="ch-text">A dark athlete photo with "Train Like A Legend" sitting over it in big red type. Sets the energy before a word is read.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Contents list</div>
+        <div class="ch-text">A short list upfront so the reader knows what's coming before they scroll down.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Article blocks</div>
+        <div class="ch-text">Photo, category label, title, copy, button. Each article gets its full moment in the email.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Logo</div>
+        <div class="ch-text">The Total Shape logo sits at the top of every email. Every subscriber should know who it's from the second it opens.</div>
+      </div>
+    </div>
+
+    <div class="shots-wrap">
+      <div class="shot-col">
+        <div class="shot-label b">Before</div>
+        <div class="shot-img-wrap">
+          <img src="email3-before.png" alt="Weekly newsletter original" width="280" loading="lazy">
+        </div>
+      </div>
+      <div class="arrow-divider">
+        <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 22 C10 18, 14 28, 22 20 C30 12, 34 30, 44 18 C50 12, 52 20, 58 16"
+            stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          <path d="M54 10 L60 16 L52 20"
+            stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="shot-col">
+        <div class="shot-label a">After</div>
+        <div class="annotated-outer">
+          <div class="annotated">
+            <img src="email3-after.png" alt="Weekly newsletter redesigned" width="240" loading="lazy">
+            <svg class="anno-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <polyline class="anno-line" points="50,6 58,6 58,5 105,5"/>
+              <polyline class="anno-line" points="50,10 58,10 58,8 105,8"/>
+              <polyline class="anno-line" points="50,36 58,36 58,35 105,35"/>
+              <polyline class="anno-line" points="50,58 58,58 58,57 105,57"/>
+            </svg>
+            <div class="anno-labels">
+              <div class="anno-label" style="top:1%"><strong>Masthead</strong>Signals a regular send worth opening.</div>
+              <div class="anno-label" style="top:5%"><strong>Hero banner</strong>Sets the energy before a word is read.</div>
+              <div class="anno-label" style="top:29%"><strong>Contents</strong>Reader knows what's inside before scrolling.</div>
+              <div class="anno-label" style="top:51%"><strong>Article block</strong>Photo, label, title, copy, button.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ EMAIL 04 ═══════════════════════════ -->
+<section class="email-section">
+  <div class="w">
+    <div class="e-header">
+      <div class="e-big-num">04</div>
+      <div class="e-header-text">
+        <div class="e-badge">Celebrity Feature</div>
+        <div class="e-title">The Captain America<br>Transformation</div>
+      </div>
+    </div>
+
+    <p class="e-body">"Captain America... Avenger. Ever heard of him?" — that hook is perfect. I kept it word for word and built the whole email around it so the energy carries all the way through.</p>
+
+    <div class="changes-list">
+      <div class="ch-item">
+        <div class="ch-name">Hero image</div>
+        <div class="ch-text">The Captain America promo image opens the email. The subscriber knows what they're in for before they read a word.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Top Secret block</div>
+        <div class="ch-text">A styled classified file introduces the programme. It fits the theme and has a clear button so it's obvious it's clickable.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">YouTube video</div>
+        <div class="ch-text">The Total Shape breakdown is embedded in the email with a short intro. Subscribers can watch right there.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Macro chart</div>
+        <div class="ch-text">The 40/35/25 split shown as a clean horizontal bar chart. Readable at a glance.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">Celebrity cards</div>
+        <div class="ch-text">Ronnie Coleman, Arnold, Zac Efron at the bottom with their photos and links to the Total Shape articles.</div>
+      </div>
+      <div class="ch-item">
+        <div class="ch-name">P.S.</div>
+        <div class="ch-text">"Who's your superhero? Reply and let me know." Invites a response. Good for the relationship and good for deliverability.</div>
+      </div>
+    </div>
+
+    <div class="shots-wrap">
+      <div class="shot-col">
+        <div class="shot-label b">Before</div>
+        <div class="shot-img-wrap">
+          <img src="email4-before.png" alt="Captain America email original" width="280" loading="lazy">
+        </div>
+      </div>
+      <div class="arrow-divider">
+        <svg viewBox="0 0 64 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 22 C10 18, 14 28, 22 20 C30 12, 34 30, 44 18 C50 12, 52 20, 58 16"
+            stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          <path d="M54 10 L60 16 L52 20"
+            stroke="#CC0000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="shot-col">
+        <div class="shot-label a">After</div>
+        <div class="annotated-outer">
+          <div class="annotated">
+            <img src="email4-after.png" alt="Captain America email redesigned" width="240" loading="lazy">
+            <svg class="anno-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <polyline class="anno-line" points="50,8 58,8 58,6 105,6"/>
+              <polyline class="anno-line" points="50,28 58,28 58,27 105,27"/>
+              <polyline class="anno-line" points="50,62 58,62 58,60 105,60"/>
+              <polyline class="anno-line" points="50,70 58,70 58,68 105,68"/>
+              <polyline class="anno-line" points="50,80 58,80 58,79 105,79"/>
+            </svg>
+            <div class="anno-labels">
+              <div class="anno-label" style="top:2%"><strong>Hero image</strong>Captain America opens it.</div>
+              <div class="anno-label" style="top:21%"><strong>Top Secret</strong>Themed block. Clickable.</div>
+              <div class="anno-label" style="top:55%"><strong>YouTube</strong>Breakdown embedded in the email.</div>
+              <div class="anno-label" style="top:63%"><strong>Macro chart</strong>40/35/25 as a bar. At a glance.</div>
+              <div class="anno-label" style="top:73%"><strong>Celeb cards</strong>Photos + links to more routines.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
+<section class="services-section">
+  <div class="w">
+    <div class="s-intro">
+      <span class="s-tag">What else I can do</span>
+      <h2 class="s-h">Emails are just<br>where I started.</h2>
+      <p class="s-p">Here is everything I can bring to Total Shape beyond the four emails in this pitch.</p>
+    </div>
+
+    <div class="svc-grid">
+      <!-- Featured card spans two rows -->
+      <div class="svc-card featured">
+        <div class="svc-num">01</div>
+        <div class="svc-title">Email Strategy</div>
+        <p class="svc-desc" style="color:rgba(255,255,255,0.6);">Full sequence redesign, newsletter templates, automation flows, A/B testing, and deliverability checks. I handle everything from design to the moment it lands in the inbox.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <div class="svc-title">Copywriting</div>
+        <p class="svc-desc">Email copy, landing pages, article intros, product descriptions. Words that feel warm and move people to act.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <div class="svc-title">Lead Generation</div>
+        <p class="svc-desc">Building the systems that bring the right people into your list and keep them there. Strategy, segmentation, opt-in flows.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <div class="svc-title">Website Redesign</div>
+        <p class="svc-desc">The content on your website is strong. I'd love to explore what the experience could look like when the design is built to match it.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05</div>
+        <div class="svc-title">More of My Work</div>
+        <p class="svc-desc">These four emails are a sample. <a href="https://my-portfolio-winifred-achinike.vercel.app/marketing--portfolio.html" target="_blank">View my full portfolio →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+<section class="contact-section">
+  <div class="w">
+    <div class="contact-grid">
+      <div>
+        <h2 class="cta-h">Let's talk<br>about it.</h2>
+        <p class="cta-p">Everything here is ready to go. I'm happy to walk you through it, answer any questions, or just pick up wherever feels right.</p>
+        <a href="https://calendly.com/winifredachinike" target="_blank" class="cta-btn">Book a Call →</a>
+      </div>
+
+      <div class="contact-details">
+        <div class="cd-item">
+          <div class="cd-label">Name</div>
+          <div class="cd-value">Winifred Achinike</div>
+        </div>
+                <div class="cd-item">
+          <div class="cd-label">Email</div>
+          <div class="cd-value"><a href="/cdn-cgi/l/email-protection#5126383f3837233435303239383f383a34777267656a363c30383d777265676a323e3c">winifredachinike&#64;gmail&#46;com</a></div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-label">Phone</div>
+          <div class="cd-value"><a href="tel:+2349028021766">+234 902 802 1766</a></div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-label">Book a call</div>
+          <div class="cd-value"><a href="https://calendly.com/winifredachinike" target="_blank">calendly.com/winifredachinike ↗</a></div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-label">Portfolio</div>
+          <div class="cd-value"><a href="https://my-portfolio-winifred-achinike.vercel.app/marketing--portfolio.html" target="_blank">View my work ↗</a></div>
+        </div>
+      </div>
